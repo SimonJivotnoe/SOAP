@@ -1,0 +1,72 @@
+<?xml version ='1.0' encoding ='UTF-8' ?> 
+<definitions name='AutoShop'
+        targetNamespace="http://SOAP/server"
+        xmlns:tns="http://soap2/server"
+		xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+		xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+		xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/'
+		xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+		xmlns='http://schemas.xmlsoap.org/wsdl/'>
+   <types>
+        <schema targetNamespace='http://SOAP/server/'
+                xmlns='http://www.w3.org/2000/10/XMLSchema'>
+
+            <xsd:element name="getListAutoResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="id" type="xsd:integer" maxOccurs="1" minOccurs="1"/>
+                        <xsd:element name="brand" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+                        <xsd:element name="model" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+                        <xsd:element name="year" type="xsd:integer" maxOccurs="1" minOccurs="1"/>
+                        <xsd:element name="capacity" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+                        <xsd:element name="color" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+                        <xsd:element name="maxSpeed" type="xsd:integer" maxOccurs="1" minOccurs="1"/>
+                        <xsd:element name="price" type="xsd:integer" maxOccurs="1" minOccurs="1"/>
+                        <xsd:element name="img" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </schema>
+    </types>
+	<message name='getListAutoResponse'>
+        <part name='Result_getListAutoResponse' element="tns:getListAutoResponse"/>
+    </message>
+	<message name='getDetailsRequest'> 
+		<part name='id' type='xsd:integer'/> 
+	</message>
+	<message name='getDetailsResponse'>
+        <part name='param' element="tns:getDetailsResponse"/>
+	</message>
+
+	<portType name='AutoPortType'>
+		<operation name='getListAuto'> 
+			<output message='tns:getListAutoResponse'/> 
+		</operation>
+		<operation name='getDetails'> 
+			<input message='tns:getDetailsRequest'/>
+			<output message='tns:getDetailsResponse'/> 
+		</operation>	
+	</portType>
+
+	<binding name='AutoBinding' type='tns:AutoPortType'>
+		<soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+
+        <operation name='getListAuto'>
+            <soap:operation soapAction='urn:xmethods-delayed-quotes#getListAuto'/>
+            <output>
+                <soap:body use='encoded' namespace='urn:xmethods-delayed-quotes'
+                           encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+            </output>
+        </operation>
+
+		<!--<operation name='getListAuto' />
+		<operation name='getDetails' />-->
+
+	</binding>
+
+	<service name='AutoShop'>
+		<port name='NewsPort' binding='AutoBinding'> 
+			<soap:address location='http://192.168.0.15/~user1/PHP/SOAP/SOAP/server/Server.php'/>
+    </port>
+</service>
+</definitions>
