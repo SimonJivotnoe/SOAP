@@ -14,7 +14,8 @@ class HomeCtrl
            if ('all' == $_GET['action']) {
            $res = $obj->listOfAuto();
            } else if('details' == $_GET['action']){
-            $res = $obj->details();
+            $id = $_GET['id'];   
+            $res = $obj->details($id);
            } else {
                
            }
