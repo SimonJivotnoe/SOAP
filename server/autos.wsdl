@@ -58,10 +58,7 @@
                            encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
             </output>
         </operation>
-        <operation name='getDetails'>
-            <input message="tns:getDetailsRequest" />
-            <output message="tns:getDetailsResponse" />
-        </operation>
+        <operation name='getDetails' />
 	<!--<operation name='details'>
             <soap:operation soapAction='urn:xmethods-delayed-quotes#details'/>
             <input>
