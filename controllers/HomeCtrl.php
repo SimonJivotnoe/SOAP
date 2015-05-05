@@ -13,8 +13,10 @@ class HomeCtrl
            $obj = new Client();
            if ('all' == $_GET['action']) {
            $res = $obj->listOfAuto();
+           } else if('details' == $_GET['action']){
+            $res = $obj->details();
            } else {
-
+               
            }
 
            $objView->printRes($res);
