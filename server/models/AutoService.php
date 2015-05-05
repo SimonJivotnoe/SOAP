@@ -16,19 +16,22 @@ class AutoService{
 		}
 	}
 
-/*	function getNewsCount(){
+	function details($id){
 		try{
-			$sql = "SELECT count(*) FROM msgs";
-			$result = $this->_db->querySingle($sql);
-			if (!$result) 
-				throw new Exception($this->_db->lastErrorMsg());
-			return $result;
+			$pdo = PDOModel::connect();
+            $res = $pdo ->select("*")
+                ->from("autos")
+                ->where("id = '$id")
+                ->exec();
+            if (!empty($res)) {
+                return $res;
+            }
 		}catch(Exception $e){
-			throw new SoapFault('getNewsCount', $e->getMessage());
+			throw new SoapFault('something wrong', $e->getMessage());
 		}
 	}
 
-	function getNewsCountByCat($cat_id){
+/*	function getNewsCountByCat($cat_id){
 		try{
 			$sql = "SELECT count(*) FROM msgs WHERE category=$cat_id";
 			$result = $this->_db->querySingle($sql);
