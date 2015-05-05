@@ -31,10 +31,10 @@
 	<message name='getListAutoResponse'>
         	<part name='Result_getListAutoResponse' element="tns:getListAutoResponse"/>
     	</message>
-	<message name='detailsRequest'> 
+	<message name='getDetailsRequest'> 
 		<part name='id' type='xsd:string'/> 
 	</message>
-	<message name='detailsResponse'>
+	<message name='getDetailsResponse'>
         <part name='Result_detailsResponse' element="tns:detailsResponse"/>
 	</message>
 
@@ -57,6 +57,10 @@
                 <soap:body use='encoded' namespace='urn:xmethods-delayed-quotes'
                            encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
             </output>
+        </operation>
+        <operation name='getDetails'>
+            <input message="tns:getDetailsRequest" />
+            <output message="tns:getDetailsResponse" />
         </operation>
 	<!--<operation name='details'>
             <soap:operation soapAction='urn:xmethods-delayed-quotes#details'/>
