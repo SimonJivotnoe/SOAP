@@ -16,8 +16,8 @@ class Client
         return $res;
     }
     
-    public function details(){
-        $res = $this->client->details();
+    public function details($id){
+        $res = $this->client->details($id);
         return $res;
     }
 } 
