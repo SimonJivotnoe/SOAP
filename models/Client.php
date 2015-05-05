@@ -15,4 +15,9 @@ class Client
         $res = $this->client->getListAuto();
         return $res;
     }
+    
+    public function details(){
+        $res = $this->client->details();
+        return $res;
+    }
 } 
