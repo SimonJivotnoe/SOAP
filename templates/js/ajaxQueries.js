@@ -13,7 +13,6 @@ function listOfAutos()
                         '<div class="col-md-4 col-md-offset-1 well product" name="'+val+'"></div>');
                 } else {
                     $('.content').children().last().append('<h2>'+val+'</h2>');
-                    $('#selectSearch').append('<option>'+key+'</option>');
                 }
             })
         })
