@@ -58,13 +58,16 @@
                            encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
             </output>
         </operation>
-	<!--<operation name='details'>
+	<operation name='details'>
             <soap:operation soapAction='urn:xmethods-delayed-quotes#details'/>
+            <input>
+            	
+            </input>
             <output>
                 <soap:body use='encoded' namespace='urn:xmethods-delayed-quotes'
                            encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
             </output>
-        </operation>-->
+        </operation>
 
 	</binding>
 
