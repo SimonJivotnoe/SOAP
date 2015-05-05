@@ -35,7 +35,7 @@
 		<part name='id' type='xsd:string'/> 
 	</message>
 	<message name='getDetailsResponse'>
-        <part name='Result_detailsResponse' element="tns:detailsResponse"/>
+        <part name='Result_getDetailsResponse' element="tns:getDetailsResponse"/>
 	</message>
 
 	<portType name='AutoPortType'>
