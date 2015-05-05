@@ -20,14 +20,14 @@ function listOfAutos()
     } )
 }
 
-function details()
+function details(id)
 {
     $.ajax( {
-        url   : 'index.php?action=details',
+        url   : 'index.php?action=details&id=' + id,
         method: 'GET'
     } ).then( function ( data )
     {
-        var objJSON = JSON.parse( data );
+        var objJSON = JSON.parse( data );console.log(objJSON);
         $.each(objJSON, function(key, val){
             $.each(val, function(key, val){
 
