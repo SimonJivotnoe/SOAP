@@ -31,11 +31,11 @@
 	<message name='getListAutoResponse'>
         <part name='Result_getListAutoResponse' element="tns:getListAutoResponse"/>
     </message>
-	<message name='getDetailsRequest'> 
-		<part name='id' type='xsd:integer'/> 
+	<message name='detailsRequest'> 
+		<part name='id' type='xsd:string'/> 
 	</message>
-	<message name='getDetailsResponse'>
-        <part name='param' element="tns:getDetailsResponse"/>
+	<message name='detailsResponse'>
+        <part name='Result_detailsResponse' element="tns:detailsResponse"/>
 	</message>
 
 	<portType name='AutoPortType'>
@@ -58,9 +58,13 @@
                            encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
             </output>
         </operation>
-
-		<!--<operation name='getListAuto' />
-		<operation name='getDetails' />-->
+	<operation name='details'>
+            <soap:operation soapAction='urn:xmethods-delayed-quotes#details'/>
+            <output>
+                <soap:body use='encoded' namespace='urn:xmethods-delayed-quotes'
+                           encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+            </output>
+        </operation>
 
 	</binding>
 
