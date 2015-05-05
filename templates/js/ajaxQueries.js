@@ -19,3 +19,20 @@ function listOfAutos()
 
     } )
 }
+
+function details()
+{
+    $.ajax( {
+        url   : 'index.php?action=details',
+        method: 'GET'
+    } ).then( function ( data )
+    {
+        var objJSON = JSON.parse( data );
+        $.each(objJSON, function(key, val){
+            $.each(val, function(key, val){
+
+            })
+        })
+
+    } )
+}
