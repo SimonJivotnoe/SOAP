@@ -86,7 +86,7 @@ function confirmOrder(name, surname, payment, id){
     } ).then( function ( data )
     {
         if (null != data) {
-            $('.content' ).html('successful');
+            $('.content' ).html('<span id="successful">successful</span>');
             setTimeout('window.location.href = "/~user1/PHP/SOAP/SOAP/index.php";', 1100);
         } else {
 
