@@ -55,7 +55,7 @@ class AutoService{
         $id = $resArr[3];
         try{
             $pdo = PDOModel::connect();
-            $res = $pdo->insert("orders")
+            $res = $pdo->insert("ordersA")
                 ->fields("name, surname, payment, car_id")
                 ->values("'$name', '$surname', '$payment', $id")
                 ->execInsertWithLastID();
