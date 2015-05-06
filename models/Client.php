@@ -16,8 +16,18 @@ class Client
         return $res;
     }
     
-    public function details($id){
-        $res = $this->client->details($id);
+     public function details($id){
+        $res = $this->client->getDetails($id);
+        return $res;
+    }
+
+    public function search($searchInput, $searchOption){
+        $res = $this->client->getSearch(array($searchInput, $searchOption));
+        return $res;
+    }
+
+    public function order($name, $surname, $payment, $id){
+        $res = $this->client->order(array($name, $surname, $payment, $id));
         return $res;
     }
 } 
