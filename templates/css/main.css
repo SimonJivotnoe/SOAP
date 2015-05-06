@@ -11,3 +11,6 @@
 .product:hover {
     cursor: pointer;
 }
+#successful{
+    color: green;
+}
