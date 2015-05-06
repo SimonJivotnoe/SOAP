@@ -1,6 +1,7 @@
 $( document ).ready( function ()
 {
     listOfAutos( );
+    $('body').fadeIn();
     $('body').on('click', '.product', function(){
         var id = $(this).attr('name');
         details(id);
