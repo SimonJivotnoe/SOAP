@@ -32,12 +32,23 @@
         	<part name='Result_getListAutoResponse' element="tns:getListAutoResponse"/>
     	</message>
 	<message name='getDetailsRequest'> 
-		<part name='id' type='xsd:string'/> 
+		<part name='id' type='xsd:string'/>
 	</message>
 	<message name='getDetailsResponse'>
         <part name='Result_getDetailsResponse' element="tns:getDetailsResponse"/>
 	</message>
-
+    <message name='getSearchRequest'>
+        <part name='id' element="tns:getSearchRequest"/>
+    </message>
+    <message name='getSearchResponse'>
+        <part name='Result_getSearchResponse' element="tns:getSearchResponse"/>
+    </message>
+    <message name='orderRequest'>
+        <part name='id' element="tns:orderRequest"/>
+    </message>
+    <message name='orderResponse'>
+        <part name='Result_orderResponse' element="tns:orderResponse"/>
+    </message>
 	<portType name='AutoPortType'>
 		<operation name='getListAuto'> 
 			<output message='tns:getListAutoResponse'/> 
@@ -45,7 +56,15 @@
 		<operation name='getDetails'> 
 			<input message='tns:getDetailsRequest'/>
 			<output message='tns:getDetailsResponse'/> 
-		</operation>	
+		</operation>
+        <operation name='getSearch'>
+            <input message='tns:getSearchRequest'/>
+            <output message='tns:getSearchResponse'/>
+        </operation>
+        <operation name='order'>
+            <input message='tns:orderRequest'/>
+            <output message='tns:orderResponse'/>
+        </operation>
 	</portType>
 
 	<binding name='AutoBinding' type='tns:AutoPortType'>
@@ -58,18 +77,39 @@
                            encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
             </output>
         </operation>
-        <operation name='getDetails' />
-	<!--<operation name='details'>
-            <soap:operation soapAction='urn:xmethods-delayed-quotes#details'/>
+        <operation name='getDetails'>
+            <soap:operation soapAction='urn:xmethods-delayed-quotes#getDetails'/>
             <input>
-            	
+                <soap:body use='encoded' namespace='urn:xmethods-delayed-quotes'
+                           encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
             </input>
             <output>
                 <soap:body use='encoded' namespace='urn:xmethods-delayed-quotes'
                            encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
             </output>
-        </operation>-->
-
+        </operation>
+        <operation name='getSearch'>
+            <soap:operation soapAction='urn:xmethods-delayed-quotes#getSearch'/>
+            <input>
+                <soap:body use='encoded' namespace='urn:xmethods-delayed-quotes'
+                           encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+            </input>
+            <output>
+                <soap:body use='encoded' namespace='urn:xmethods-delayed-quotes'
+                           encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+            </output>
+        </operation>
+        <operation name='order'>
+            <soap:operation soapAction='urn:xmethods-delayed-quotes#order'/>
+            <input>
+                <soap:body use='encoded' namespace='urn:xmethods-delayed-quotes'
+                           encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+            </input>
+            <output>
+                <soap:body use='encoded' namespace='urn:xmethods-delayed-quotes'
+                           encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+            </output>
+        </operation>
 	</binding>
 
 	<service name='AutoShop'>
