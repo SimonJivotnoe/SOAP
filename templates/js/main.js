@@ -10,8 +10,8 @@ $( document ).ready( function ()
         var id = $(this).attr('name');
         $('.content').html('<div class="col-md-4 col-md-offset-1 well">' +
         '<div class="confirmOrder">' +
-        '<input type="text" placeholder="name" id="nameO" />' +
-        '<input type="text" placeholder="surname" id="surnameO" />' +
+        '<p><input type="text" placeholder="name" id="nameO" /></p>' +
+        '<p><input type="text" placeholder="surname" id="surnameO" /></p>' +
         '<p>Type of payment<select type="text" placeholder="surname" id="payment">' +
         '<option value="cash">cash</option>' +
         '<option value="card">card</option>' +
