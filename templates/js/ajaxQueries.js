@@ -18,7 +18,7 @@ function listOfAutos()
                 }
             })
         })
-        $('body').fadeIn();
+        $('body').fadeIn(50);
     } )
 }
 
